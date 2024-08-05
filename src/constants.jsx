@@ -7,6 +7,7 @@ export const navLinks = [
     { name: 'Events', path: '/events' },
     { name: 'Schedule', path: '/schedule' },
     { name: 'Gallery', path: '/gallery' },
+    { name: 'Testimonials', path: '/testimonials'},
     { name: 'Contact', path: '/contact' },
 ];
 
