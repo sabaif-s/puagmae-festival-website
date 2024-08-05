@@ -9,6 +9,7 @@ export default {
       colors: {
         goldenrod: '#DAA520', // Define your custom golden color here
       },
+      
     },
   },
   plugins: [],
