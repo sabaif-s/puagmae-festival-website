@@ -30,7 +30,7 @@ const NavBar = () => {
             ))}
           </ul>
         </div>
-        <div className='hidden lg:flex  space-x-4'>
+        <div className='hidden lg:flex space-x-4'>
           <ul className='flex space-x-4 list-none'>
             {socialLinks.map((socialLink) => (
               <li key={socialLink.path}>
@@ -54,7 +54,7 @@ const NavBar = () => {
       <div 
         className={`fixed top-0 left-0 w-64 h-full bg-black text-white transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } transition-transform duration-300 ease-in-out`}
+        } transition-transform duration-300 ease-in-out z-50`}
       >
         <div className='flex flex-col h-full p-4'>
           <div className='flex justify-between items-center mb-4'>

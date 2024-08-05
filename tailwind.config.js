@@ -7,9 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        goldenrod: '#DAA520', // Define your custom golden color here
+        goldenrod: '#DAA520', // Custom golden color
+        'transparent-black': 'rgba(0, 0, 0, 0.5)' // Semi-transparent black for overlay
       },
-      
+      spacing: {
+        '128': '32rem', // Custom spacing if needed
+      },
     },
   },
   plugins: [],
