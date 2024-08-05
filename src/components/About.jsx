@@ -9,7 +9,7 @@ const About = () => {
   };
 
   return (
-    <div className='relative py-20 bg-gradient-to-r from-gray-900 to-black text-white'>
+    <div className='relative py-20 bg-gradient-to-r from-gray-900 to-black text-white' id='about'>
       <div className='max-w-6xl mx-auto px-4'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
           <div className='flex flex-col justify-center'>

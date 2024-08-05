@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import backgroundImage from '../assets/home-background.jpg'; // Your background image
+import backgroundImage from '../assets/home-background.jpg';
 import { FaRegClock } from 'react-icons/fa';
 
 const Home = () => {
@@ -38,6 +38,7 @@ const Home = () => {
   return (
     <div
       className='relative h-screen bg-cover bg-center flex items-center justify-center'
+      id='home'
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className='absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-60'></div>

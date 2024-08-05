@@ -7,7 +7,7 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='bg-black text-white'>
+    <div className='sticky top-0 left-0 w-full bg-black text-white z-50'>
       <nav className='flex justify-between items-center max-w-6xl mx-auto py-4'>
         <div className='flex-none'>
           <img 
@@ -16,12 +16,12 @@ const NavBar = () => {
             className='w-20 h-20'
           />
         </div>
-        <div className='hidden lg:flex  justify-center'>
+        <div className='hidden lg:flex justify-center'>
           <ul className='flex space-x-6 list-none'>
             {navLinks.map((navLink) => (
               <li key={navLink.name}>
                 <a 
-                  href={navLink.path} 
+                  href={`#${navLink.id}`} 
                   className='text-lg font-medium text-white hover:text-goldenrod hover:scale-105 transform transition duration-300'
                 >
                   {navLink.name}
@@ -67,24 +67,24 @@ const NavBar = () => {
               <FaTimes size={24} />
             </button>
           </div>
-          <ul className='flex flex-col flex-grow space-y-4 list-none'>
+          <ul className='flex flex-col space-y-4'>
             {navLinks.map((navLink) => (
-              <li key={navLink.name}>
-                <a 
-                  href={navLink.path} 
-                  className='text-lg font-medium hover:text-goldenrod'
+              <li key={navLink.id} className='cursor-pointer'>
+                <a
+                  href={`#${navLink.id}`}
+                  className='text-lg font-medium text-white hover:text-goldenrod hover:scale-105 transform transition duration-300'
                 >
                   {navLink.name}
                 </a>
               </li>
             ))}
           </ul>
-          <ul className='flex space-x-4 mt-4 list-none'>
+          <ul className='flex flex-col space-y-4 mt-4'>
             {socialLinks.map((socialLink) => (
               <li key={socialLink.path}>
                 <a 
                   href={socialLink.path} 
-                  className='text-xl hover:text-goldenrod'
+                  className='text-xl text-white hover:text-goldenrod'
                 >
                   {socialLink.name}
                 </a>
