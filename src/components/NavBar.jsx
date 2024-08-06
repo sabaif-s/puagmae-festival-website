@@ -1,10 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { navLinks, socialLinks } from '../constants';
 import logo from '../assets/logo.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
+
+  useEffect(() => {
+    const handleScroll = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    };
+
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.4,
+    };
+
+    const observer = new IntersectionObserver(handleScroll, options);
+
+    navLinks.forEach(link => {
+      const section = document.getElementById(link.id);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      navLinks.forEach(link => {
+        const section = document.getElementById(link.id);
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
 
   return (
     <div className='sticky top-0 left-0 w-full bg-black text-white z-50'>
@@ -19,10 +54,12 @@ const NavBar = () => {
         <div className='hidden lg:flex justify-center'>
           <ul className='flex space-x-6 list-none'>
             {navLinks.map((navLink) => (
-              <li key={navLink.name}>
+              <li key={navLink.id}>
                 <a 
                   href={`#${navLink.id}`} 
-                  className='text-lg font-medium text-white hover:text-goldenrod hover:scale-105 transform transition duration-300'
+                  className={`text-lg font-medium ${
+                    activeLink === navLink.id ? 'text-goldenrod' : 'text-white'
+                  } hover:text-goldenrod hover:scale-105 transform transition duration-300`}
                 >
                   {navLink.name}
                 </a>
@@ -72,7 +109,10 @@ const NavBar = () => {
               <li key={navLink.id} className='cursor-pointer'>
                 <a
                   href={`#${navLink.id}`}
-                  className='text-lg font-medium text-white hover:text-goldenrod hover:scale-105 transform transition duration-300'
+                  className={`text-lg font-medium ${
+                    activeLink === navLink.id ? 'text-goldenrod' : 'text-white'
+                  } hover:text-goldenrod hover:scale-105 transform transition duration-300`}
+                  onClick={() => setIsOpen(false)}
                 >
                   {navLink.name}
                 </a>

@@ -5,12 +5,17 @@ import treePlanting from './assets/tree-planting.jpg';
 import fashionShow from './assets/fashion-show.jpg';
 import culturalFoodMaking from './assets/cultural-food-making.jpg';
 import panelDiscussion from './assets/panel-discussion.jpg';
+import peaceAndLove from './assets/peace-and-love.png';
+import culturalUnity from './assets/cultural-unity.png';
+import childrenFestival from './assets/children-festival.png';
+import tradeEvent from './assets/trade-event.jpg';
+import beautyCompetition from './assets/beauty-competition.jpg';
+
 
 export const navLinks = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Services', id: 'services' },
-    { name: 'Events', id: 'events' },
     { name: 'Schedule', id: 'schedule' },
     { name: 'Gallery', id: 'gallery' },
     { name: 'Testimonials', id: 'testimonials' },
@@ -61,5 +66,38 @@ export const services = [
         description: 'Engage in discussions on cultural and social issues.',
         fullDescription: 'Our panel discussions provide a platform for engaging and insightful conversations on cultural and social issues, featuring experts and community leaders.',
         image: panelDiscussion,
+    },
+];
+
+export const scheduleData = [
+    {
+        date: 'September 6, 2024',
+        title: 'Peace and Love',
+        description: 'Celebrate peace and love across Africa and around the world. This day is dedicated to fostering harmony and unity through various events and activities.',
+        image: peaceAndLove,
+    },
+    {
+        date: 'September 7, 2024',
+        title: 'Cultural and Africa Unity',
+        description: 'Experience the rich culture and traditions of Africa. This day highlights the cultural heritage and unity of the African continent through performances and exhibitions.',
+        image: culturalUnity,
+    },
+    {
+        date: 'September 8, 2024',
+        title: 'African Children Festival',
+        description: 'A special day for children featuring games, activities, and events designed to celebrate and entertain the younger generation.',
+        image: childrenFestival,
+    },
+    {
+        date: 'September 9, 2024',
+        title: "Let's Trade on Puagmae",
+        description: 'An exciting trading event for various production companies, traders, and entrepreneurs to showcase their products and services.',
+        image: tradeEvent,
+    },
+    {
+        date: 'September 10, 2024',
+        title: "Puagmae's Beauty",
+        description: 'A fashion show competition celebrating the pure beauty of Africa, featuring stunning designs and models from across the continent.',
+        image: beautyCompetition,
     },
 ];
