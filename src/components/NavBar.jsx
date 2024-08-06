@@ -56,8 +56,8 @@ const NavBar = () => {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 ease-in-out z-50`}
       >
-        <div className='flex flex-col h-full p-4'>
-          <div className='flex justify-between items-center mb-4'>
+        <div className='flex flex-col h-full'>
+          <div className='flex justify-between items-center p-4'>
             <img 
               src={logo} 
               alt="puagmae logo" 
@@ -67,7 +67,7 @@ const NavBar = () => {
               <FaTimes size={24} />
             </button>
           </div>
-          <ul className='flex flex-col space-y-4'>
+          <ul className='flex flex-col flex-grow p-4 space-y-4'>
             {navLinks.map((navLink) => (
               <li key={navLink.id} className='cursor-pointer'>
                 <a
@@ -79,18 +79,20 @@ const NavBar = () => {
               </li>
             ))}
           </ul>
-          <ul className='flex flex-col space-y-4 mt-4'>
-            {socialLinks.map((socialLink) => (
-              <li key={socialLink.path}>
-                <a 
-                  href={socialLink.path} 
-                  className='text-xl text-white hover:text-goldenrod'
-                >
-                  {socialLink.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className='p-4 mt-auto'>
+            <ul className='flex space-x-4'>
+              {socialLinks.map((socialLink) => (
+                <li key={socialLink.path} className='text-xl'>
+                  <a 
+                    href={socialLink.path} 
+                    className='text-white hover:text-goldenrod transform transition duration-300'
+                  >
+                    {socialLink.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
