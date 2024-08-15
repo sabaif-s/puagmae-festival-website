@@ -20,9 +20,15 @@ export default function MasonryGridGallery() {
   const [isPic,setPic]=useState(false);
   const [isPicFirst,setFirstPic]=useState(false);
   const [isPicThird,setThirdPic]=useState(false);
+  const [isLoaded,setLoad]=useState(false);
+  const iframeRef=useRef(null);
   var tempTop;
   var tempBottom;
   useEffect(() => {
+    const iframe = iframeRef.current;
+    if (iframe) {
+      iframe.src = 'https://www.youtube.com/embed/f98qFOQnlWw?si=b70SNchdiGhfvDVC';
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -71,7 +77,7 @@ export default function MasonryGridGallery() {
               console.log("visible");
             }
             else{
-              setGallery(false);
+              
               setPic(false);
               setFirstPic(false);
               setThirdPic(false);
@@ -94,7 +100,7 @@ export default function MasonryGridGallery() {
       },
       {
         rootMargin: '0px',
-        threshold: 0, // Trigger the event when 10% of the div is visible
+        threshold: 0.9, // Trigger the event when 10% of the div is visible
       }
     );
      
@@ -132,7 +138,9 @@ export default function MasonryGridGallery() {
   const handleImageClick = (image) => {
     setSelectedImage(image);
   };
-
+    const handleIframeLoad=()=>{
+       setLoad(true);
+    }
   const handleCloseClick = () => {
     setSelectedImage(null);
   };
@@ -141,8 +149,11 @@ export default function MasonryGridGallery() {
   const [buttonText, setButtonText] = useState('Video');
 
   const handleButtonClick = () => {
-    setShowVideo((prevState) => !prevState);
-    setButtonText((prevText) => (prevText === 'Video' ? 'Hide' : 'Video'));
+    
+      setShowVideo((prevState) => !prevState);
+      setButtonText((prevText) => (prevText === 'Video' ? 'Hide' : 'Video'));
+    
+  
   };
 
 
@@ -298,6 +309,8 @@ export default function MasonryGridGallery() {
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="aspect-video w-full max-w-2xl mt-5">
             <iframe
+            ref={iframeRef}
+              onLoad={handleIframeLoad}
               className="w-full h-full"
               src="https://www.youtube.com/embed/f98qFOQnlWw?si=b70SNchdiGhfvDVC"
               frameBorder="0"

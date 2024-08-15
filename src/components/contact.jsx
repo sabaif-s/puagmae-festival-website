@@ -17,6 +17,7 @@ import image8 from '../assets/tree-planting.jpg';
  
 
 
+
 export default function myContact(){
   
   const divRef = useRef(null);
@@ -127,10 +128,10 @@ export default function myContact(){
 
     emailjs
       .sendForm(
-        'service_6uiulvk',
+        'service_xqp2oj8',
         'template_awbu5eh',
         event.target,
-        'Vl0w92Ek-4bGLCPC9'
+        'vExBR3tkohSGu0M3P'
       )
       .then(
         (result) => {
@@ -148,6 +149,12 @@ export default function myContact(){
         },
         (error) => {
           console.error('Error sending email:', error.text);
+          setFormState({
+            user_name: '',
+            email_name: '',
+            message: '',
+            address:'',
+          });
         }
       );
   };
@@ -203,7 +210,7 @@ export default function myContact(){
                  <p className='pb-10 pt-3 md:pb-6 font-bold'> <a href="tel:+251901002282" className='cursor-pointer'>+2519 01 00 22 82</a>
                   </p>
                </div>
-               <div>
+               {/* <div>
                <FontAwesomeIcon icon={faClock}
                className='w-6 h-7 text-gray-400 hover:text-gray-700 inline'
                />
@@ -225,7 +232,7 @@ export default function myContact(){
   </div>
 </div>
              
-               </div>
+               </div> */}
                <div
               
                >
@@ -247,14 +254,7 @@ export default function myContact(){
     onMouseLeave={handleMouseLeave}
   >
     {/* Add your map component here */}
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.628474512137!2d38.72900071137378!3d9.006291691016779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b872bd4cd3c9d%3A0x821422725403d743!2sPuagmae%20Festival!5e0!3m2!1sen!2set!4v1723150413836!5m2!1sen!2set"
-      className="w-full"
-      height="200px"
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5277847944653!2d38.733186611373974!3d9.01552379100796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b86759211d999%3A0x74668c1e1413be93!2zSGF2ZW4gSG90ZWwgfCBHZWphIFNlZmVyIHwg4YiA4Ymo4YqVIOGIhuGJtOGIjSB8IOGMjOGMgyDhiLDhjYjhiK0!5e0!3m2!1sen!2set!4v1723738549600!5m2!1sen!2set" width="500" height="350"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
 

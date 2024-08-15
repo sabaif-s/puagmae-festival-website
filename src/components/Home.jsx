@@ -1,9 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Typed from 'typed.js';
 import backgroundImage from '../assets/home-background.jpg';
 import { FaRegClock } from 'react-icons/fa';
 
 const Home = () => {
   const [timeRemaining, setTimeRemaining] = useState(getTimeRemaining());
+  const typedElement = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      strings: [
+        'An Epic Festival Awaiting Your Presence',
+        'Join Us for Unforgettable Celebrations',
+        'Experience the African Golden 13th Month',
+        'A Cultural Extravaganza Like No Other'
+      ],
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 1500,
+      loop: true,
+      showCursor: false,
+    };
+
+    const typed = new Typed(typedElement.current, options);
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -48,7 +72,10 @@ const Home = () => {
           the African <span className='text-goldenrod'>Golden</span> 13th Month
         </h1>
         <p className='text-xl md:text-2xl mb-8'>
-          An Epic Festival Awaiting Your Presence
+          <span
+            ref={typedElement}
+            className='block text-3xl md:text-4xl font-semibold text-white animate-pulse'
+          ></span>
         </p>
         <div className='bg-goldenrod p-6 rounded-lg shadow-2xl inline-block'>
           <h2 className='text-2xl md:text-4xl font-semibold mb-4 flex items-center justify-center'>

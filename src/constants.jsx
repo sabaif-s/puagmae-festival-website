@@ -10,7 +10,23 @@ import culturalUnity from './assets/cultural-unity.png';
 import childrenFestival from './assets/children-festival.png';
 import tradeEvent from './assets/trade-event.jpg';
 import beautyCompetition from './assets/beauty-competition.jpg';
+import gallery1 from './assets/Gallery/gallery-image1.jpg';
+import gallery2 from './assets/Gallery/gallery-image2.jpg';
+import gallery3 from './assets/Gallery/gallery-image3.jpg';
+import gallery4 from './assets/Gallery/gallery-image4.jpg';
+import gallery5 from './assets/Gallery/gallery-image6.jpg';
+import gallery6 from './assets/Gallery/gallery-image7.jpg';
+import gallery7 from './assets/Gallery/gallery-image9.jpg';
+import gallery8 from './assets/Gallery/gallery-image10.jpg';
+import gallery9 from './assets/Gallery/gallery-image11.jpg';
+import gallery10 from './assets/Gallery/gallery-image12.jpg';
+import gallery11 from './assets/Gallery/gallery-image13.jpg';
+import testimonial1 from "./assets/testimonials/testimonial1.jpg";
+import testimonial2 from "./assets/testimonials/testimonial2.jpg";
+import testimonial3 from "./assets/testimonials/testimonial3.jpg";
 
+import { FaHandshake , FaUsers, FaLightbulb, FaBullhorn, FaRocket } from 'react-icons/fa';
+import { MdEqualizer } from 'react-icons/md';
 
 export const navLinks = [
     { name: 'Home', id: 'home' },
@@ -101,3 +117,105 @@ export const scheduleData = [
         image: beautyCompetition,
     },
 ];
+
+export const galleryData = [
+    {
+        image: gallery1,
+        alt: 'Gallery Image 1',
+    } ,
+    {
+        image: gallery2,
+        alt: 'Gallery Image 2',
+    } ,
+    {
+        image: gallery3,
+        alt: 'Gallery Image 3',
+    } ,
+    {
+        image: gallery4,
+        alt: 'Gallery Image 4',
+    } ,
+    {
+        image: gallery5,
+        alt: 'Gallery Image 5',
+    } ,
+    {
+        image: gallery6,
+        alt: 'Gallery Image 6',
+    } ,
+    {
+        image: gallery7,
+        alt: 'Gallery Image 7',
+    } ,
+    {
+        image: gallery8,
+        alt: 'Gallery Image 8',
+    } ,
+    {
+        image: gallery9,
+        alt: 'Gallery Image 9',
+    } ,
+    {
+        image: gallery10,
+        alt: 'Gallery Image 10',
+    } ,
+    {
+        image: gallery11,
+        alt: 'Gallery Image 11',
+    } ,
+]
+
+export const testimonials = [
+    {
+        name: 'John Doe',
+        title: 'CEO, Company Name',
+        image: testimonial1,
+        quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec purus nec purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec purus nec purus.',
+    } ,
+    {
+        name: 'John Doe',
+        title: 'CEO, Company Name',
+        image: testimonial2,
+        quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec purus nec purus. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec purus nec purus.',
+    } ,
+    {
+        name: 'John Doe',
+        title: 'CEO, Company Name',
+        image: testimonial3,
+        quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec purus nec purus. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec purus nec purus.',
+    } ,
+]
+
+
+export const reasons = [
+    {
+      icon: <FaHandshake className="text-4xl text-goldenrod" />,
+      title: 'We Encourage the Ideals of Unity',
+      description: 'We foster a collaborative and unified approach to achieve common goals.',
+    },
+    {
+      icon: <MdEqualizer className="text-4xl text-goldenrod" />,
+      title: 'We Never Compromise Equality',
+      description: 'Equality is at the core of our values, ensuring fair treatment and opportunities for all.',
+    },
+    {
+      icon: <FaUsers className="text-4xl text-goldenrod" />,
+      title: 'Reliable Audience Relationship',
+      description: 'We build and maintain strong, trustworthy relationships with our audience.',
+    },
+    {
+      icon: <FaLightbulb className="text-4xl text-goldenrod" />,
+      title: 'Technology & Creativity',
+      description: 'Combining cutting-edge technology with creative solutions to drive innovation.',
+    },
+    {
+      icon: <FaRocket className="text-4xl text-goldenrod" />,
+      title: 'We Are Highly Responsible',
+      description: 'Our commitment to responsibility ensures that we deliver on our promises with integrity.',
+    },
+    {
+      icon: <FaBullhorn className="text-4xl text-goldenrod" />,
+      title: 'Continuous Improvement',
+      description: 'We are dedicated to continuous improvement and striving for excellence in everything we do.',
+    },
+  ];
